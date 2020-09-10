@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Nuegelb</string>
+
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="movie_image">Movie Image</string>
+    <string name="info_load_config">Loading Configuration</string>
+    <string name="info_release_date">Release on: %s</string>
+    <string name="info_no_image">No Image</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_search">Search</string>
+
+    <string name="transition_image">trans_image</string>
+</resources>
