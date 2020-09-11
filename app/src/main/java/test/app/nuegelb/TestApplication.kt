@@ -2,9 +2,9 @@ package test.app.nuegelb
 
 import android.app.Application
 import org.koin.android.ext.android.startKoin
-import test.app.nuegelb.data.rest.di.networkModule
-import test.app.nuegelb.di.appModule
-import test.app.nuegelb.di.viewModelModule
+import test.app.nuegelb.data.dataModule
+import test.app.nuegelb.domain.domainModule
+import test.app.nuegelb.ui.viewModelModule
 import timber.log.Timber
 
 class TestApplication : Application() {
@@ -13,7 +13,7 @@ class TestApplication : Application() {
         super.onCreate()
 
         val moduleList = listOf(
-            networkModule, viewModelModule, appModule
+            dataModule, domainModule, viewModelModule
         )
         startKoin(this, moduleList)
 
