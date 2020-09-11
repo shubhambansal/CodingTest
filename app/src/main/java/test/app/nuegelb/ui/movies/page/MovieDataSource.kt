@@ -28,7 +28,7 @@ class MovieDataSource(
             try {
 
                 val response = executeQuery()
-                callback.onResult(response.list, response.page, response.totalResult)
+                callback.onResult(response.list, 0, response.totalResult)
             } catch (e: Exception) {
                 Timber.e(e)
             }
@@ -82,5 +82,10 @@ class MovieDataSource(
 
     override fun getKey(item: MovieUiModel): Int {
         return pageNumber
+    }
+
+    override fun invalidate() {
+        pageNumber = 1
+        super.invalidate()
     }
 }
