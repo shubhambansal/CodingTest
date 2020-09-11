@@ -28,7 +28,7 @@ class MovieDataSource(
             try {
 
                 val response = executeQuery()
-                callback.onResult(response.list, response.page, response.totalPage)
+                callback.onResult(response.list, response.page, response.totalResult)
             } catch (e: Exception) {
                 Timber.e(e)
             }

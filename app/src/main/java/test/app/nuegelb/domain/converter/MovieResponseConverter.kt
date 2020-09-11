@@ -1,7 +1,7 @@
 package test.app.nuegelb.domain.converter
 
-import test.app.nuegelb.data.local.AppPreference
 import test.app.nuegelb.data.dto.MovieResponse
+import test.app.nuegelb.data.local.AppPreference
 import test.app.nuegelb.domain.Converter
 import test.app.nuegelb.domain.model.MovieModel
 import test.app.nuegelb.ui.movies.model.MovieUiModel
@@ -28,7 +28,7 @@ class MovieResponseConverter(appPreference: AppPreference) :
             )
         }
 
-        return MovieModel(movieList, input.page, input.totalPages)
+        return MovieModel(movieList, input.page, input.totalPages, input.totalResult)
 
     }
 
@@ -45,7 +45,12 @@ class MovieResponseConverter(appPreference: AppPreference) :
         }
     }
 
-    private fun getDateString(date: String): String {
+    private fun getDateString(date: String?): String {
+
+        if (date.isNullOrEmpty()) {
+            return ""
+        }
+
         val date = DateUtil.fromDateFormat.parse(date)
         return DateUtil.toDateFormat.format(date)
     }

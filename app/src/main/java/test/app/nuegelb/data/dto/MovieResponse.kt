@@ -17,7 +17,7 @@ data class Result(
     @field:Json(name = "vote_average") val voteAverage: Float,
     val title: String,
     val overview: String,
-    val release_date: String,
+    val release_date: String?,
     @field:Json(name = "poster_path") val posterPath: String?,
     @field:Json(name = "backdrop_path") val fallbackPosterPath: String?
 )
